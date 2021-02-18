@@ -1,8 +1,31 @@
 (function(){
+
     "use strict";
+
     var regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function(){
 
+      // MAPA GOOGLE
+
+      var map = L.map('mapa').setView([27.769732, -15.587695], 13);
+
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      
+      }).addTo(map);
+      
+      
+      L.marker([27.769732, -15.587695]).addTo(map)
+      
+      .bindPopup('GDLWEBCAMP 2018 <br> Boletos ya disponibles.')
+      
+      .openPopup()
+      
+      .bindTooltip('Un Tooltip')
+      
+      .openTooltip();
 
      //datos de usuarios
 var nombre = document.getElementById('nombre');
@@ -25,6 +48,7 @@ var suma = document.getElementById('suma-total');
 var camisas = document.getElementById('camisa_evento');
 var etiquetas = document.getElementById('etiquetas');
 
+if(calcular !==null){
 calcular.addEventListener('click', calcularMontos);
 pase_dia.addEventListener('blur', mostrarDias);
 pase_dosdias.addEventListener('blur', mostrarDias);
@@ -105,6 +129,7 @@ function calcularMontos(event) {
             suma.innerHTML = "$" + totalPagar.toFixed(2);
 
     }
+ }
 }
 
            function mostrarDias(){
@@ -126,8 +151,84 @@ function calcularMontos(event) {
             for(var i = 0; i < diasElegidos.length; i++) {
                 document.getElementById(diasElegidos[i]).style.display = 'block';
             }
-
            }
      
     }); // DOMContentLoaded
 })();
+
+
+
+$(function() {
+
+           //Leterin
+    $('.nombre-sitio').lettering();
+
+    //Menu Fijo Nav
+     var windowHeight = $(window).height();
+     var barraAltura = $('.barra').innerHeight();
+
+     
+
+
+     $('window').scroll(function() {
+        var scrollTop = $(window).scrollTop();
+       
+     });
+
+
+
+      //Programa de Conferencias
+     $('.programa-evento .info-curso:first').show();
+     $('.menu-programa a:first').addClass('activo');
+
+
+     $('.menu-programa a').on('click', function() {
+         $('.menu-programa a').removeClass('activo');
+         $('this').addClass('activo');
+         $('.ocultar').hide();
+         
+       var enlace = $(this).attr('href');
+       $(enlace).fadeIn(500);
+       return false;
+
+});
+//animaciones paralax numerical  
+
+  $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
+  $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 3000);
+  $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 2800);
+  $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
+
+  //cuentaRegresiva
+
+  $('.cuenta-regreciva').countdown('2021/07/16 21:02:30', function(event){
+    $('#dias').html(event.strftime('%D'));
+    $('#horas').html(event.strftime('%H'));
+    $('#minutos').html(event.strftime('%M'));
+    $('#segundos').html(event.strftime('%S'));
+  });
+
+  //Customizando Titulo GdlWebCam
+
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
