@@ -6,7 +6,7 @@
     document.addEventListener('DOMContentLoaded', function(){
 
       // MAPA GOOGLE
-
+      if(document.getElementById('mapa')){ 
       var map = L.map('mapa').setView([27.769732, -15.587695], 13);
 
 
@@ -26,6 +26,7 @@
       .bindTooltip('Un Tooltip')
       
       .openTooltip();
+    }
 
      //datos de usuarios
 var nombre = document.getElementById('nombre');
@@ -48,7 +49,7 @@ var suma = document.getElementById('suma-total');
 var camisas = document.getElementById('camisa_evento');
 var etiquetas = document.getElementById('etiquetas');
 
-if(calcular !==null){
+if(document.getElementById(calcular)){
 calcular.addEventListener('click', calcularMontos);
 pase_dia.addEventListener('blur', mostrarDias);
 pase_dosdias.addEventListener('blur', mostrarDias);
@@ -130,7 +131,7 @@ function calcularMontos(event) {
 
     }
  }
-}
+
 
            function mostrarDias(){
             var boletosDia = parseInt(pase_dia.value, 10) || 0,
@@ -152,6 +153,7 @@ function calcularMontos(event) {
                 document.getElementById(diasElegidos[i]).style.display = 'block';
             }
            }
+        }
      
     }); // DOMContentLoaded
 })();
@@ -167,13 +169,22 @@ $(function() {
      var windowHeight = $(window).height();
      var barraAltura = $('.barra').innerHeight();
 
-     
-
-
-     $('window').scroll(function() {
-        var scrollTop = $(window).scrollTop();
-       
+     $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if(scroll > windowHeight) {
+            $('.barra').addClass('fixed');
+            $('body').css({'margin-top':barraAltura+'px'});
+        } else {
+            $('.barra').removeClass('fixed');
+            $('body').css({'margin-top':'0px'});
+        }
      });
+
+                //Menu Barra Nav responsiv
+                $('.menu-movil').on('click', function(){
+                    $('.navegacion-principal').slideToggle();
+                });
+     
 
 
 
@@ -193,12 +204,18 @@ $(function() {
 
 });
 //animaciones paralax numerical  
+var resumenLista = $('.resumen-evento');
+if(resumenLista.length > 0) {
+    $('.resumen-evento').waypoint(function() {
+        $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
+        $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 3000);
+        $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 2800);
+        $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
+    },{
+     offset: '40%',
+    });
 
-  $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
-  $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 3000);
-  $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 2800);
-  $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
-
+}
   //cuentaRegresiva
 
   $('.cuenta-regreciva').countdown('2021/07/16 21:02:30', function(event){
