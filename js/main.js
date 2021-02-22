@@ -6,7 +6,8 @@
     document.addEventListener('DOMContentLoaded', function(){
 
       // MAPA GOOGLE
-
+      var mapa= document.querySelector('#mapa');
+      if(mapa){
       var map = L.map('mapa').setView([27.769732, -15.587695], 13);
 
 
@@ -26,6 +27,7 @@
       .bindTooltip('Un Tooltip')
       
       .openTooltip();
+    }
 
      //datos de usuarios
 var nombre = document.getElementById('nombre');
@@ -167,14 +169,20 @@ $(function() {
      var windowHeight = $(window).height();
      var barraAltura = $('.barra').innerHeight();
 
-     
-
-
-     $('window').scroll(function() {
-        var scrollTop = $(window).scrollTop();
-       
+     $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if(scroll > windowHeight) {
+            $('.barra').addClass('fixed');
+            $('body').css({'margin-top':barraAltura+'px'});
+        } else {
+            $('.barra').removeClass('fixed');
+            $('body').css({'margin-top':'0px'});
+        }
      });
-
+         //Menu Barra Nav responsiv
+         $('.menu-movil').on('click', function(){
+             $('.navegacion-principal').slideToggle();
+         });
 
 
       //Programa de Conferencias
@@ -193,11 +201,18 @@ $(function() {
 
 });
 //animaciones paralax numerical  
+    var resumenLista = $('.resumen-evento');
+    if(resumenLista.length > 0) {
+        $('.resumen-evento').waypoint(function(){
+            $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
+            $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 3000);
+            $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 2800);
+            $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
+        },{
+            offset: '40%',
+        })
+    }
 
-  $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
-  $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 3000);
-  $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 2800);
-  $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
 
   //cuentaRegresiva
 

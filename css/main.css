@@ -324,7 +324,13 @@ h1.nombre-sitio {
 div.barra {
   background-color: #353535;
   padding: 15px 0;
-
+}
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 div.logo {
@@ -343,6 +349,10 @@ div.logo img {
    }
   }
   /**Navegacion Principal**/
+  nav.navegacion-principal {
+    display: none;
+    width: 100%;
+  }
  
 
 nav.navegacion-principal a {
@@ -355,7 +365,7 @@ nav.navegacion-principal a {
   transition: all .3s ease;
   width: 100%;
   text-align: center;
-  display: inline;
+  display: block;
 }
 nav.navegacion-principal a:hover{
   background-color: #fe4918;
@@ -367,7 +377,7 @@ nav.navegacion-principal a:last-child{
 nav.navegacion-principal a:last-child:hover{
   color: #ffffff;
 }
-@media only screen and (min-width:720px){
+@media only screen and (min-width:768px){
   nav.navegacion-principal{
     clear: both;
     width: 66%;
@@ -387,7 +397,6 @@ div.menu-movil {
   display: block;
   float:right;
   text-align: right;
-  margin-top: 12px;
 }
 div.menu-movil:hover {
   cursor: pointer;
