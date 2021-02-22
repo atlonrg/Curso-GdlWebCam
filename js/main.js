@@ -49,7 +49,7 @@ var suma = document.getElementById('suma-total');
 var camisas = document.getElementById('camisa_evento');
 var etiquetas = document.getElementById('etiquetas');
 
-if(document.getElementById(calcular)){
+if(calcular !==null){
 calcular.addEventListener('click', calcularMontos);
 pase_dia.addEventListener('blur', mostrarDias);
 pase_dosdias.addEventListener('blur', mostrarDias);
@@ -163,8 +163,9 @@ function calcularMontos(event) {
 $(function() {
 
            //Leterin
-    $('.nombre-sitio').lettering();
-
+           
+           $('.nombre-sitio').lettering();
+           
     //Menu Fijo Nav
      var windowHeight = $(window).height();
      var barraAltura = $('.barra').innerHeight();
@@ -224,15 +225,6 @@ if(resumenLista.length > 0) {
     $('#minutos').html(event.strftime('%M'));
     $('#segundos').html(event.strftime('%S'));
   });
-
-  //Customizando Titulo GdlWebCam
-
-
-
-
-
-
-
 
 });
 
