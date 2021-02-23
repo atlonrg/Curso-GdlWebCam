@@ -859,6 +859,7 @@ div.campo {
   }
 }
 div.paquetes .tabla-precio:hover {
+clear: both;
 transform: none;
 box-shadow: none;
 }
