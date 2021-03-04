@@ -3,5 +3,17 @@
         {
             "path": "."
         }
-    ]
+    ],
+    "settings": {
+        "phpserver.browser": "Firefox",
+        "phpserver.phpConfigPath": "E:\\Bitnami\\wampstack-8.0.2-0\\php\\php.ini",
+        "phpserver.phpPath": "E:\\Bitnami\\wampstack-8.0.2-0\\php\\php.exe",
+        "phpserver.ip": "localhost/gdlwebcam/index.html",
+        "phpserver.relativePath": "localhost/gdlwebcam/"
+    },
+    "extensions": {
+        "recommendations": [
+            "rifi2k.format-html-in-php"
+        ]
+    }
 }

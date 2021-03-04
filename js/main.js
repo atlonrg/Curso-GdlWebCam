@@ -5,28 +5,7 @@
     var regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function(){
 
-      // MAPA GOOGLE
-      if(document.getElementById('mapa')){ 
-      var map = L.map('mapa').setView([27.769732, -15.587695], 13);
 
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      
-      }).addTo(map);
-      
-      
-      L.marker([27.769732, -15.587695]).addTo(map)
-      
-      .bindPopup('GDLWEBCAMP 2018 <br> Boletos ya disponibles.')
-      
-      .openPopup()
-      
-      .bindTooltip('Un Tooltip')
-      
-      .openTooltip();
-    }
 
      //datos de usuarios
 var nombre = document.getElementById('nombre');
@@ -154,6 +133,8 @@ function calcularMontos(event) {
             }
            }
         }
+
+ 
      
     }); // DOMContentLoaded
 })();
@@ -227,6 +208,29 @@ if(resumenLista.length > 0) {
   });
 
 });
+
+             // MAPA GOOGLE
+             if(document.getElementById('mapa')){ 
+                var map = L.map('mapa').setView([27.769732, -15.587695], 13);
+          
+          
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                
+                }).addTo(map);
+                
+                
+                L.marker([27.769732, -15.587695]).addTo(map)
+                
+                .bindPopup('GDLWEBCAMP 2018 <br> Boletos ya disponibles.')
+                
+                .openPopup()
+                
+                .bindTooltip('Un Tooltip')
+                
+                .openTooltip();
+              }
 
 
 
