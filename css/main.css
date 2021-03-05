@@ -150,7 +150,7 @@ h2 {
 h2::after {
   content: '';
   margin: 0 auto;
-  background-image: url(/img/separador.png);
+  background-image: url('../img/separador.png');
   height: 30px;width: 100px;
   display: block;
 }
@@ -250,7 +250,7 @@ h1.nombre-sitio span {
 
 /** Header **/
 div.hero {
-background-image: url(/img/encabezado.jpg);
+background-image: url('../img/encabezado.jpg');
 height: 90vh;
 background-position: top center;
 background-size: cover;
@@ -479,7 +479,7 @@ margin-left: auto;
 margin-right: auto;
 height: 20px;
 width: 30px;
-background-image: url(/img/talleres-flecha.jpg) ;
+background-image: url('../img/talleres-flecha.jpg') ;
 background-position: top center;
 background-repeat: no-repeat;
 bottom: -20px;
@@ -582,7 +582,7 @@ position: relative;
 height: auto;
 }
 div.contador::before {
-background-image: url(/img/bg-resumen.jpg);
+background-image: url('../img/bg-resumen.jpg');
 content: '';
 }
 ul.resumen-evento {
@@ -741,7 +741,7 @@ div.newsletter {
   height: auto;
 }
 div.newsletter::before {
-  background-image: url(/img/bg-newsletter.jpg);
+  background-image: url('../img/bg-newsletter.jpg');
   content:'';
 }
 div.newsletter .contenido {

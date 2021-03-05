@@ -141,12 +141,10 @@ function calcularMontos(event) {
 
 
 
-$(function() {
-
-           //Leterin
-           
-           $('.nombre-sitio').lettering();
-           
+jQuery(document).ready(function($){
+    //Leterin
+    $('.nombre-sitio').lettering();
+    });
     //Menu Fijo Nav
      var windowHeight = $(window).height();
      var barraAltura = $('.barra').innerHeight();
@@ -207,7 +205,7 @@ if(resumenLista.length > 0) {
     $('#segundos').html(event.strftime('%S'));
   });
 
-});
+
 
              // MAPA GOOGLE
              if(document.getElementById('mapa')){ 
