@@ -25,9 +25,9 @@
                 <div class="programa-evento">
                     <h2>Programa del Evento</h2>
                     <nav class="menu-programa">
-                        <a href="talleres"><i class="fa fa-code"></i> Talleres</a>
-                        <a href="conferencias"><i class="fa fa-comment"></i> Conferencias</a>
-                        <a href="seminarios"><i class="fa fa-university"></i> Seminarios</a>
+                        <a href="#talleres"><i class="fa fa-code"></i> Talleres</a>
+                        <a href="#conferencias"><i class="fa fa-comment"></i> Conferencias</a>
+                        <a href="#seminarios"><i class="fa fa-university"></i> Seminarios</a>
                     </nav>
                     <div id="talleres" class="info-curso ocultar clearfix">
                         <div class="detalle-evento">
@@ -85,47 +85,7 @@
         <!--contenido-programa-->
     </section>
     <!--Programa-->
-    <section class="invitados contenedor seccion">
-        <h2>Nuestros Invitados</h2>
-        <ul class="lista-invitados clearfix">
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado1.jpg" alt="Rafael Bautista">
-                    <p>Rafael Bautista</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado2.jpg" alt="Shari Herrera">
-                    <p>Shari Herrera</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado3.jpg" alt="Gregorio Sanchez">
-                    <p>Gregorio Sanchez</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado4.jpg" alt="Susana Rivera">
-                    <p>Susana Rivera</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado5.jpg" alt="Harold Garcia">
-                    <p>Harold Garcia</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado6.jpg" alt="Susana Sanchez">
-                    <p>Susana Sanchez</p>
-                </div>
-            </li>
-        </ul>
-    </section>
+    <?php include_once 'includes/templates/invitados.php'; ?>
     <!--sierre sect-fotos-->
     <div class="contador paralax">
         <div class="contador">
@@ -268,5 +228,4 @@
             </ul>
         </div>
     </section>
-    <?php include_once 'includes/templates/footer.php'; ?>
-
+ <?php include_once 'includes/templates/footer.php'; ?>

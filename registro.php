@@ -56,7 +56,7 @@
                     </li>
                     <li>
                         <div class="tabla-precio">
-                            <h3 class="text">Pase por 2 dias<span>(viernes/sabado)</span></h3>
+                            <h3 class="text">Pase por 2 dias<span>(viernes/ sabado)</span></h3>
                             <p class="numero">$45</p>
                             <ul>
                                 <li>Bocadillos Gratis</li>
@@ -108,7 +108,7 @@
                     </div>
                     <!--#viernes-->
                     <div id="sabado" class="contenido-dia clearfix">
-                        <h4>Sábado</h4>
+                        <h4>sabado</h4>
                         <div>
                             <p>Talleres:</p>
                             <label><input type="checkbox" name="registro[]" id="taller_06"
@@ -142,7 +142,7 @@
                                     value="sem_03"><time>17:00</time> Diseño UI y UX para móviles</label>
                         </div>
                     </div>
-                    <!--#sabado-->
+                    <!--# sabado-->
                     <div id="domingo" class="contenido-dia clearfix">
                         <h4>Domingo</h4>
                         <div>

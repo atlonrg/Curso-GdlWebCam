@@ -205,6 +205,10 @@ if(resumenLista.length > 0) {
     $('#segundos').html(event.strftime('%S'));
   });
 
+  //colorbox of custom step
+  $(".invitado-info").colorbox({inline:true, width:"50%"}) ;
+
+
 
 
              // MAPA GOOGLE

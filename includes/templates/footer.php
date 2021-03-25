@@ -35,22 +35,28 @@
             Todos los derechos Reservados GDLWEBCAMP 2016.
         </p>
     </footer>
-
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="js/leaflet.js"></script>
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
     </script>
+    <script src="Lettering.js/jquery.lettering.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
+    
+    
     <script src="jquery.countdown-2.2.0/jquery.countdown.min.js"></script>
     <script src="waypoints/lib/jquery.waypoints.js"></script>
+    <?php 
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php", "", $archivo);
+    if($pagina == 'invitados' || $pagina == 'index'){
+      echo '<script src="js/jquery.colorbox.js"></script>';
+    }else if($pagina == 'conferencia') {
+        echo '<script src="js/lightbox.js"></script>';
+    }
+    ?>
     <script src="js/plugins.js"></script>
-    <script src="Lettering.js/jquery.lettering.js"></script>
     <script src="js/main.js"></script>
-
-
-
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
